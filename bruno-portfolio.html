@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bruno Kago | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .active-link {
+      color: #1e3a8a;
+      font-weight: 700;
+    }
+    .mobile-slide {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.4s ease-in-out;
+    }
+    .mobile-slide.open {
+      max-height: 400px;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800 scroll-smooth">
+
+  <!-- Navigation Bar -->
+  <nav class="fixed w-full bg-white shadow-md z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-blue-800">Bruno Kago</h1>
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex space-x-6 text-gray-600 font-medium">
+        <li><a href="#about" class="nav-link hover:text-blue-800 transition">About</a></li>
+        <li><a href="#skills" class="nav-link hover:text-blue-800 transition">Skills</a></li>
+        <li><a href="#experience" class="nav-link hover:text-blue-800 transition">Experience</a></li>
+        <li><a href="#projects" class="nav-link hover:text-blue-800 transition">Projects</a></li>
+        <li><a href="#education" class="nav-link hover:text-blue-800 transition">Education</a></li>
+        <li><a href="#contact" class="nav-link hover:text-blue-800 transition">Contact</a></li>
+      </ul>
+      <!-- Mobile Menu Button -->
+      <button id="menuBtn" class="md:hidden text-blue-800 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5M3.75 12h16.5M3.75 18.75h16.5" />
+        </svg>
+      </button>
+    </div>
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="md:hidden flex flex-col items-center bg-white border-t border-gray-200 py-4 space-y-4 text-gray-600 font-medium mobile-slide">
+      <a href="#about" class="nav-link hover:text-blue-800 transition">About</a>
+      <a href="#skills" class="nav-link hover:text-blue-800 transition">Skills</a>
+      <a href="#experience" class="nav-link hover:text-blue-800 transition">Experience</a>
+      <a href="#projects" class="nav-link hover:text-blue-800 transition">Projects</a>
+      <a href="#education" class="nav-link hover:text-blue-800 transition">Education</a>
+      <a href="#contact" class="nav-link hover:text-blue-800 transition">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Header / Hero Section -->
+  <header class="bg-blue-800 text-white py-32 text-center fade-in mt-16">
+    <h1 class="text-4xl font-bold">Bruno Kago</h1>
+    <p class="mt-2 text-lg">Application Support Specialist & Software Developer</p>
+    <p class="max-w-2xl mx-auto mt-4 text-gray-200">
+      I am a detail-oriented Application Support Specialist and Software Developer with a strong background in troubleshooting, maintaining, and enhancing enterprise applications.
+    </p>
+    <div class="mt-6 space-x-4">
+      <a href="#projects" class="bg-white text-blue-800 px-5 py-2 rounded-full font-semibold hover:bg-blue-100 transition">View Projects</a>
+      <a href="#contact" class="border border-white px-5 py-2 rounded-full font-semibold hover:bg-white hover:text-blue-800 transition">Contact Me</a>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 px-6 md:px-20 text-center fade-in">
+    <h2 class="text-3xl font-semibold text-blue-800 mb-4">About Me</h2>
+    <p class="max-w-3xl mx-auto text-gray-600">
+      I’m passionate about building reliable systems and solving complex technical challenges. With experience across Linux/Windows environments, cloud (AWS), databases (MySQL, MongoDB), and programming languages including Java, JavaScript, Python, Go, PHP, HTML, and CSS, I enjoy creating efficient software solutions that bridge business and technology.
+    </p>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="bg-blue-50 py-16 px-6 md:px-20 fade-in">
+    <h2 class="text-3xl font-semibold text-blue-800 text-center mb-10">Skills</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+      <div class="bg-white shadow-md rounded-2xl p-6">
+        <h3 class="text-xl font-bold mb-2">Programming</h3>
+        <p>Java, JavaScript, Python, Go, PHP</p>
+      </div>
+      <div class="bg-white shadow-md rounded-2xl p-6">
+        <h3 class="text-xl font-bold mb-2">Frameworks</h3>
+        <p>React, Node.js, Spring Boot, Laravel, ASP.NET</p>
+      </div>
+      <div class="bg-white shadow-md rounded-2xl p-6">
+        <h3 class="text-xl font-bold mb-2">Databases</h3>
+        <p>MySQL, MongoDB</p>
+      </div>
+      <div class="bg-white shadow-md rounded-2xl p-6">
+        <h3 class="text-xl font-bold mb-2">Tools & Cloud</h3>
+        <p>AWS, Git, Linux/Windows Servers</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section with Timeline -->
+  <section id="experience" class="py-16 px-6 md:px-20 bg-white fade-in">
+    <h2 class="text-3xl font-semibold text-blue-800 text-center mb-10">Experience</h2>
+    <div class="relative border-l-4 border-blue-700 max-w-3xl mx-auto space-y-12">
+      <div class="ml-6">
+        <div class="absolute -left-3 bg-blue-700 w-6 h-6 rounded-full flex items-center justify-center text-white">💼</div>
+        <h3 class="text-xl font-semibold text-blue-800">Application Support – Absa Bank Kenya</h3>
+        <p class="text-gray-500">March 2024 – Present</p>
+        <ul class="mt-3 text-gray-700 list-disc list-inside">
+          <li>Provided IT support to over 150 users across multiple departments.</li>
+          <li>Monitored enterprise applications and optimized performance.</li>
+          <li>Collaborated with DevOps teams to deploy updates and fixes.</li>
+          <li>Maintained IT asset inventory and ensured software license compliance.</li>
+          <li>Assisted in cloud migrations and integration with new systems.</li>
+        </ul>
+      </div>
+      <div class="ml-6">
+        <div class="absolute -left-3 bg-blue-700 w-6 h-6 rounded-full flex items-center justify-center text-white">💻</div>
+        <h3 class="text-xl font-semibold text-blue-800">Junior Software Developer – Krom Systems Kenya</h3>
+        <p class="text-gray-500">July 2023 – February 2024</p>
+        <ul class="mt-3 text-gray-700 list-disc list-inside">
+          <li>Developed and maintained Java Spring applications.</li>
+          <li>Built RESTful APIs for data exchange between front-end and back-end.</li>
+          <li>Collaborated with UI/UX designers to improve interfaces.</li>
+          <li>Performed unit and system testing to ensure stability.</li>
+          <li>Managed databases using SQL and optimized queries.</li>
+        </ul>
+      </div>
+      <div class="ml-6">
+        <div class="absolute -left-3 bg-blue-700 w-6 h-6 rounded-full flex items-center justify-center text-white">🛠️</div>
+        <h3 class="text-xl font-semibold text-blue-800">Intern – Symetrics Limited</h3>
+        <p class="text-gray-500">May 2020 – August 2020</p>
+        <ul class="mt-3 text-gray-700 list-disc list-inside">
+          <li>Provided front-desk and technical support for staff.</li>
+          <li>Configured staff computers, printers, and network access.</li>
+          <li>Maintained and enhanced the company WordPress website.</li>
+          <li>Tracked IT inventory and ensured smooth office operations.</li>
+          <li>Installed and supported software applications.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="bg-blue-50 py-16 px-6 md:px-20 fade-in">
+    <h2 class="text-3xl font-semibold text-blue-800 text-center mb-10">Projects</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <a href="https://github.com/brunokago/offlinephonefinder" target="_blank" class="bg-white shadow-md rounded-2xl p-6 hover:shadow-lg transition">
+        <h3 class="font-bold text-lg mb-2">Offline Phone Finder</h3>
+        <p>SMS-based phone tracking app.</p>
+      </a>
+      <a href="https://github.com/brunokago/Resume-generator" target="_blank" class="bg-white shadow-md rounded-2xl p-6 hover:shadow-lg transition">
+        <h3 class="font-bold text-lg mb-2">Resume Generator</h3>
+        <p>Web app for generating professional resumes.</p>
+      </a>
+      <a href="https://github.com/brunokago/Movie" target="_blank" class="bg-white shadow-md rounded-2xl p-6 hover:shadow-lg transition">
+        <h3 class="font-bold text-lg mb-2">Movie Recommendation System</h3>
+        <p>Machine learning project that suggests movies based on user interests.</p>
+      </a>
+      <a href="https://github.com/brunokago/Simple-project-java-mysql" target="_blank" class="bg-white shadow-md rounded-2xl p-6 hover:shadow-lg transition">
+        <h3 class="font-bold text-lg mb-2">CRUD App (Java + MySQL)</h3>
+        <p>Simple CRUD operations web app.</p>
+      </a>
+      <a href="https://github.com/brunokago/Employee-management-sytem" target="_blank" class="bg-white shadow-md rounded-2xl p-6 hover:shadow-lg transition">
+        <h3 class="font-bold text-lg mb-2">Employee Management System</h3>
+        <p>Built using React, Spring Boot, and MySQL.</p>
+      </a>
+      <div class="bg-white shadow-md rounded-2xl p-6 hover:shadow-lg transition">
+        <h3 class="font-bold text-lg mb-2">WordPress Sites</h3>
+        <p><a href="http://zeebrands.co.ke" class="text-blue-700 hover:underline">zeebrands.co.ke</a><br><a href="http://kongonihouse.com" class="text-blue-700 hover:underline">kongonihouse.com</a><br><a href="http://hotelsapphire.co.ke" class="text-blue-700 hover:underline">hotelsapphire.co.ke</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="py-16 px-6 md:px-20 text-center fade-in">
+    <h2 class="text-3xl font-semibold text-blue-800 mb-4">Education</h2>
+    <p class="text-gray-700">Bachelor of Science in Informatics and Computer Science<br>Strathmore University, Nairobi (2018 – 2023)</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-blue-800 text-white py-16 text-center fade-in">
+    <h2 class="text-3xl font-semibold mb-4">Contact Me</h2>
+    <p>Email: <a href="mailto:brunokago98@gmail.com" class="underline">brunokago98@gmail.com</a></p>
+    <p>Phone: +254 721 379 361</p>
+    <p>GitHub: <a href="https://github.com/brunokago" target="_blank" class="underline">github.com/brunokago</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white py-4 text-center fade-in">
+    <p>© 2025 Bruno Kago. All rights reserved.</p>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollTopBtn" class="hidden fixed bottom-6 right-6 bg-blue-700 text-white p-3 rounded-full shadow-lg hover:bg-blue-800 transition">↑</button>
+
+  <script>
+    const btn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) btn.classList.remove('hidden');
+      else btn.classList.add('hidden');
+    });
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Mobile menu toggle with slide animation
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+
+    // Fade-in animation on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+      threshold: 0.2,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+
+    // Scroll-linked navigation highlight
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (scrollY >= sectionTop) current = section.getAttribute('id');
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active-link');
+        if (link.getAttribute('href') === `#${current}`) link.classList.add('active-link');
+      });
+    });
+  </script>
+</body>
+</html>
